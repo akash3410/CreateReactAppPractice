@@ -20,7 +20,10 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Hello World!</h1>
-        <Person />
+        <Person name="Akash" age="24" />
+        <Person name="Arifuzzaman" age="27" />
+        <Person name="Arfan" age="20" />
+        <Person name="Arifuzzan" age="28">Somethig Extra</Person>
         {/* or */}
         {/* <Person></Person> */}
       </div>
