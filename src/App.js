@@ -25,19 +25,34 @@ class App extends Component {
     ],
     other: "I am Other!"
   }
+
+  // // In old Version
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     books: [
+  //       { bookName: "Physics", Writer: "Sam" },
+  //       { bookName: "Bangla", Writer: "XYZ" },
+  //       { bookName: "Biology", Writer: "ABC" }
+  //     ],
+  //     other: "I am Other!"
+  //   }
+  // }
   render() {
     return (
       <div className="App">
-        <h1>Hello World!</h1>
+        {/* <h1>Hello World!</h1>
         <Person name="Akash" age="24" />
         <Person name="Arifuzzaman" age="27" />
         <Person name="Arfan" age="20" />
-        <Person name="Arifuzzan" age="28">Somethig Extra</Person>
+        <Person name="Arifuzzan" age="28">Somethig Extra</Person> */}
 
         <h1>Books</h1>
         <Books bookName={this.state.books[0].bookName} Writer={this.state.books[0].Writer} />
         <Books bookName={this.state.books[1].bookName} Writer={this.state.books[1].Writer} />
         <Books bookName={this.state.books[2].bookName} Writer={this.state.books[2].Writer} />
+        <Books other={this.state.other} />
+
         {/* or */}
         {/* <Person></Person> */}
       </div>
