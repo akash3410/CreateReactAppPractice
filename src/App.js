@@ -38,6 +38,16 @@ class App extends Component {
   //     other: "I am Other!"
   //   }
   // }
+
+  changeState = () => {
+    this.setState({
+      books: [
+        { bookName: "English", Writer: "ENG" },
+        { bookName: "Bangla", Writer: "XYZ" },
+        { bookName: "Mathmetics", Writer: "MATH" }
+      ]
+    });
+  }
   render() {
     return (
       <div className="App">
@@ -48,10 +58,10 @@ class App extends Component {
         <Person name="Arifuzzan" age="28">Somethig Extra</Person> */}
 
         <h1>Books</h1>
+        <button onClick={this.changeState}>Change State</button>
         <Books bookName={this.state.books[0].bookName} Writer={this.state.books[0].Writer} />
         <Books bookName={this.state.books[1].bookName} Writer={this.state.books[1].Writer} />
-        <Books bookName={this.state.books[2].bookName} Writer={this.state.books[2].Writer} />
-        <Books other={this.state.other} />
+        <Books bookName={this.state.books[2].bookName} Writer={this.state.books[2].Writer} other={this.state.other} />
 
         {/* or */}
         {/* <Person></Person> */}
