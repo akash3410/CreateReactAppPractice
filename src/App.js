@@ -48,6 +48,15 @@ class App extends Component {
       ]
     });
   }
+  changeWithInputState = event => {
+    this.setState({
+      books: [
+        { bookName: event.target.value, Writer: "ABC" },
+        { bookName: "Bangla", Writer: "newWriter" },
+        { bookName: "Mathmetics", Writer: "MATH" }
+      ]
+    });
+  }
   render() {
     return (
       <div className="App">
@@ -62,7 +71,10 @@ class App extends Component {
 
         <h1>Books</h1>
         <button onClick={() => this.changeState("Programming Language", "New Writer")}>Change State</button>
-        <Books bookName={this.state.books[0].bookName} Writer={this.state.books[0].Writer} />
+
+        <input type="text" className="input" onChange={this.changeWithInputState} />
+
+        <Books bookName={this.state.books[0].bookName} Writer={this.state.books[0].Writer} InputState={this.changeWithInputState} />
         <Books bookName={this.state.books[1].bookName} Writer={this.state.books[1].Writer} Change={() => this.changeState("C++", "C")} />
         <Books bookName={this.state.books[2].bookName} Writer={this.state.books[2].Writer} other={this.state.other} />
       </div>
