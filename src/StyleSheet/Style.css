@@ -1,8 +1,11 @@
-.Books {
-  display: inline-block;
-  width: 200px;
+.book {
+  /* display: inline-block; */
+  /* width: 200px; */
+  display: block;
+  width: 25%;
   border: 1px solid;
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
+  text-align: center;
 }
