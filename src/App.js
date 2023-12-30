@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import Person from './Components/Another';
-import Books from './Components/Book';
+import MainComponent from './Components/mainComponent';
+
+const App = () => {
+  return (
+    <MainComponent />
+  );
+}
+export default App;
+
 
 // function App() {
 //   return (
@@ -109,53 +116,3 @@ import Books from './Components/Book';
 //     );
 //   }
 // }
-
-class App extends Component {
-  state = {
-    books: [
-      { id: 1, bookName: "Bangla", Writer: "BNG" },
-      { id: 2, bookName: "English", Writer: "ENG" },
-      { id: 3, bookName: "Physics", Writer: "PHY" }
-    ],
-    other: "I am Other"
-  }
-
-  deleteBookState(event, index) {
-    const book = [...this.state.books];
-    book.splice(index, 1);
-    this.setState({
-      books: book
-    })
-  }
-
-  changFromInputState(event, index) {
-    const book = { ...this.state.books[index] };
-    book.bookName = event.target.value;
-    const books = [...this.state.books];
-    books[index] = book;
-    this.setState({
-      books: books
-    })
-  }
-
-  render() {
-    const books = this.state.books.map((book, index) => {
-      return (
-        <Books
-          bookName={book.bookName}
-          Writer={book.Writer}
-          delete={(event) => this.deleteBookState(event, index)}
-          key={book.id}
-          inputState={(event) => this.changFromInputState(event, index)}
-        />
-      );
-    })
-    return (
-      <div className='App'>
-        <h1>Books</h1>
-        {books}
-      </div>
-    );
-  }
-}
-export default App;
