@@ -6,6 +6,22 @@
   margin: 10px auto;
 }
 
+.book:hover {
+  color: orange;
+  cursor: pointer;
+}
+
+.book-nav-link {
+  text-decoration: none;
+  color: black;
+  margin: 10px 0;
+  display: block;
+}
+
+.book-nav-link:hover {
+  color: blue;
+}
+
 .heading {
   background-color: black;
   color: white;

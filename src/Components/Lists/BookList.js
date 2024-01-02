@@ -6,11 +6,13 @@ const BookList = props => {
     props.books.map((book, index) => {
       return (
         <Books
-          bookName={book.bookName}
-          Writer={book.Writer}
+          book={book}
+          // bookName={book.bookName}
+          // Writer={book.Writer}
           delete={() => props.deleteBookState(index)}
           key={book.id}
           inputState={(event) => props.changFromInputState(event, index)}
+          selectedBookDetails={() => props.selectedBookDetails(book.id)}
         />
       );
     })
